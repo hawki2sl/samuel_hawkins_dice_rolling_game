@@ -1,0 +1,116 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-size: 25%;
+  justify-content: baseline;
+  align-items: center;
+  padding: 6rem;
+  max-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  min-height: 50vh;
+  padding: 5%;
+  font-size: calc(10px + 2vmin);
+}
+
+.header_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-direction: column;
+  min-height: 50vh;
+  padding: 5%;
+  font-size: calc(10px + 2vmin);
+}
+
+.header {
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2rem, 3vw, 4rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+.image_container {
+  position: relative;
+  width: 300px;
+  height: calc((300px * 522) / 649);
+}
+
+.link {
+  color: var(--primary2);
+  background-color: var(--primary);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 150px;
+  max-width: 275px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+  font-size: clamp(6px, 3vw, 16px);
+  font-weight: 600;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--secondary);
+  transform: scale(1.05);
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .image_container {
+    width: 300px;
+    height: calc((300px * 522) / 649);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .image_container {
+    width: 400px;
+    height: calc((400px * 522) / 649);
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .image_container {
+    width: 400px;
+    height: calc((400px * 522) / 649);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .image_container {
+    width: 500px;
+    height: calc((500px * 522) / 649);
+  }
+}

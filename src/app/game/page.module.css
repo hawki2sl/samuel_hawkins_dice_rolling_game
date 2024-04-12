@@ -1,0 +1,194 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .dice_game {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: center;
+    width: 90vw;
+    min-height: 50vh;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: baseline;
+    align-items: center;
+  }
+  
+  .section:nth-child(2) {
+    min-height: 40vh;
+  }
+  
+  .wins_losses_container {
+    margin-top: 1rem;
+  }
+  
+  .rules_text {
+    max-width: 300px;
+    text-align: end;
+  }
+  
+  .dice_container {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  
+  .dice {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 65px;
+    min-height: 65px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s;
+    font-size: clamp(6px, 4vw, 22px);
+    font-weight: 600;
+  }
+  
+  .dice:hover {
+    cursor: pointer;
+  }
+  
+  .held {
+    color: var(--primary2);
+    background-color: var(--secondary);
+  }
+  
+  .rollBtn,
+  .resetBtn,
+  .rulesBtn {
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 150px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s;
+    font-size: clamp(6px, 3vw, 16px);
+    font-weight: 600;
+  }
+  
+  .rollBtn {
+    color: var(--primary);
+    background-color: var(--primary2);
+  }
+  
+  .resetBtn {
+    color: var(--primary2);
+    background-color: var(--primary);
+  }
+  
+  .rollBtn:hover {
+    cursor: pointer;
+    color: var(--primary2);
+    background-color: var(--primary);
+    transform: scale(1.05);
+  }
+  
+  .resetBtn:hover {
+    cursor: pointer;
+    color: var(--primary);
+    background-color: var(--primary2);
+    transform: scale(1.05);
+  }
+  
+  .rulesBtn:hover {
+    cursor: pointer;
+    color: var(--primary);
+    background-color: var(--secondary);
+    transform: scale(1.05);
+  }
+  
+  .messageContainer {
+    display: block;
+    margin-top: 16px; /* Adjust as needed */
+  }
+  
+  .messageContainer h2 {
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px) rotate(-5deg);
+    }
+    50% {
+      transform: translateX(5px) rotate(5deg);
+    }
+    75% {
+      transform: translateX(-5px) rotate(-5deg);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .rollBtn.shake {
+    animation: shake 0.5s ease-in-out infinite;
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) {
+  }
+  
+  @media (min-width: 768px) and (max-width: 992px) {
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .section:nth-child(1) {
+      align-items: baseline;
+    }
+  
+    .section:nth-child(2) {
+      align-items: center;
+      min-height: 0;
+    }
+  
+    .section:nth-child(3) {
+      align-items: flex-end;
+    }
+  
+    .dice_game {
+      flex-direction: row;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .dice_game {
+      align-items: baseline;
+    }
+  
+    .section:nth-child(1) {
+      align-items: baseline;
+    }
+  
+    .section:nth-child(2) {
+      align-items: center;
+      min-height: 0;
+    }
+  
+    .section:nth-child(3) {
+      align-items: flex-end;
+    }
+  
+    .dice_game {
+      flex-direction: row;
+    }
+  }
+  
