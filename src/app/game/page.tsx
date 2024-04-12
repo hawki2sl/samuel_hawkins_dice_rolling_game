@@ -78,7 +78,7 @@ const page = () => {
               <button
                 key={index}
                 onClick={() => toggleHold(index)}
-                disabled={rolls === 0 || heldDice[index]}
+                disabled={heldDice[index]}
                 className={`${styles.dice} ${
                   heldDice[index] ? styles.held : ""
                 }`}
@@ -99,7 +99,7 @@ const page = () => {
           {isWinner && <Confetti />}
           {isWinner && (
             <div className={styles.messageContainer}>
-              <h2>Winner!</h2>
+              <h2>Winner! 😄</h2>
             </div>
           )}
           {rolls === 3 && !isWinner && (
