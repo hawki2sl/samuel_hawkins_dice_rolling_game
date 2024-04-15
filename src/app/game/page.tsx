@@ -5,14 +5,14 @@ import Confetti from "react-confetti";
 import styles from "./page.module.css";
 
 const page = () => {
-  const [rolls, setRolls] = useState(0);
-  const [diceValues, setDiceValues] = useState(Array(5).fill(1));
+  const [rolls, setRolls] = useState(0); // Tracks # of rolls.
+  const [diceValues, setDiceValues] = useState(Array(5).fill(1)); // Represents the current values of the dice.
   const [isWinner, setIsWinner] = useState(false);
-  const [heldDice, setHeldDice] = useState(Array(5).fill(false));
+  const [heldDice, setHeldDice] = useState(Array(5).fill(false)); // Keeps track of which dice are being held.
   const [isShaking, setIsShaking] = useState(false);
   const [totalWins, setTotalWins] = useState(0);
   const [totalLosses, setTotalLosses] = useState(0);
-  const [showRules, setShowRules] = useState("No");
+  const [showRules, setShowRules] = useState(false);
 
   const rollDice = () => {
     if (rolls >= 3) return;
@@ -44,7 +44,7 @@ const page = () => {
 
   const resetGame = () => {
     setRolls(0);
-    setShowRules("No");
+    setShowRules(false);
     setDiceValues(Array(5).fill(1));
     setHeldDice(Array(5).fill(false));
     setIsWinner(false);
@@ -57,10 +57,10 @@ const page = () => {
   };
 
   const toggleRules = () => {
-    if (showRules === "Yes") {
-      setShowRules("No");
+    if (showRules) {
+      setShowRules(false);
     } else {
-      setShowRules("Yes");
+      setShowRules(true);
     }
   };
 
@@ -117,7 +117,7 @@ const page = () => {
           <button onClick={toggleRules} className={styles.rulesBtn}>
             Show Rules
           </button>
-          {showRules === "Yes" ? (
+          {showRules ? (
             <div className={styles.rules_text}>Get 5 matching dice in less than three rolls.</div>
           ) : (
             ""
